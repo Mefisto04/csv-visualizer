@@ -1,11 +1,12 @@
 {
-  "name": "csv-viewer",
-  "displayName": "CSV Viewer",
+  "name": "csv-visualizer",
+  "displayName": "CSV Visualizer",
   "description": "Advanced CSV visualization with table format, filtering, sorting and SQL support",
-  "version": "0.0.1",
-  "publisher": "your-publisher-name",
+  "version": "0.0.2",
+  "publisher": "mefisto04",
+  "icon": "assets/logo.png",
   "engines": {
-    "vscode": "^1.60.0"
+    "vscode": "^1.99.0"
   },
   "categories": [
     "Other",

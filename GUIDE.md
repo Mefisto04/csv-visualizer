@@ -1,79 +1,66 @@
-# CSV Viewer Extension Guide
+# CSV Visualizer Guide
 
-This guide will help you test and use the CSV Viewer extension you've built.
+## Installation
 
-## How to Test the Extension
+1. Open VS Code
+2. Go to Extensions (Ctrl+Shift+X)
+3. Search for "CSV Visualizer"
+4. Click Install
 
-1. Open this folder in VS Code
-2. Press F5 to launch a new Extension Development Host window
-3. In the new window, open the sample.csv file that we created
-4. Right-click in the editor and select "Open CSV Viewer" from the context menu
+## Usage
 
-## Features to Test
+### Opening CSV Files
 
-### Viewing CSV Data
+1. Open any CSV file in VS Code
+2. Right-click in the editor
+3. Select "Open CSV Viewer"
 
-- The CSV data should appear in a nicely formatted table
-- You should see column headers and data rows
+### Features
 
-### Sorting
+#### Table View
 
-- Click on any column header to sort by that column
-- Click the same header again to toggle between ascending and descending order
-- Notice the visual indicator showing the sort direction
+- View your CSV data in a clean, organized table
+- Scroll horizontally and vertically
+- Resize columns by dragging column borders
 
-### Filtering
+#### Sorting
 
-- Use the filter section at the top to filter data:
-  1. Select a column from the dropdown
-  2. Choose an operator (contains, equals, etc.)
-  3. Enter a filter value
-  4. Click "Apply"
-- Multiple filters can be applied sequentially
-- Click "Clear Filters" to remove all filters
+- Click column headers to sort
+- Click again to reverse sort order
+- Sort multiple columns by holding Shift while clicking
 
-### Column Selection
+#### Filtering
 
-- Use the "Columns" section to show/hide specific columns
-- "Select All" and "Clear All" buttons provide quick options
-- Individual column checkboxes toggle visibility
+1. Click the filter icon in the column header
+2. Select comparison operator (equals, contains, greater than, etc.)
+3. Enter filter value
+4. Press Enter to apply
 
-### SQL Query (Partial Implementation)
+#### Column Selection
 
-- Enter a SQL query in the SQL input box
-- Click "Run Query" to execute the query
-- Note: Full SQL implementation is planned for a future update
+1. Click the column selector icon in the toolbar
+2. Check/uncheck columns to show/hide
+3. Drag columns to reorder
 
-### Exporting (Partial Implementation)
+#### Export Options
 
-- Select an export format from the dropdown
-- Click "Export" to initiate an export
-- Note: Full export implementation is planned for a future update
+1. Click the export icon in the toolbar
+2. Choose format (CSV, JSON, Excel)
+3. Select save location
 
-## Debugging
+#### SQL Query
 
-If you encounter issues:
+1. Click the SQL icon in the toolbar
+2. Enter your SQL query
+3. Click Run to execute
+4. Results will display in a new table
 
-- Check the Developer Tools console (Help > Toggle Developer Tools)
-- Look at the VS Code "Extension Development Host" output panel
-- Ensure all dependencies are correctly installed
+## Troubleshooting
 
-## Publishing the Extension
+- If the viewer doesn't open, ensure the file is a valid CSV
+- For large files (>10MB), consider using filters to improve performance
+- If SQL queries fail, check for syntax errors in your query
 
-When you're ready to share your extension:
+## Support
 
-1. Create a publisher account on the VS Code Marketplace
-2. Update the `publisher` field in package.json
-3. Run `vscode:prepublish` script to create a production build
-4. Run `vscode --install-extension csv-viewer-0.0.1.vsix` to test the packaged extension
-5. Publish to the VS Code Marketplace using `vsce publish`
-
-## Next Steps
-
-Consider implementing these enhancements:
-
-- Complete the SQL query functionality using sql.js
-- Add proper export functionality for different formats
-- Add pagination for large CSV files
-- Implement data editing capabilities
-- Add charts and visualizations
+For issues and feature requests, please visit the GitHub repository.
