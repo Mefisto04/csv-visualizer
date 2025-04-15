@@ -1,0 +1,86 @@
+{
+  "name": "csv-viewer",
+  "displayName": "CSV Viewer",
+  "description": "Advanced CSV visualization with table format, filtering, sorting and SQL support",
+  "version": "0.0.1",
+  "publisher": "your-publisher-name",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other",
+    "Data Science",
+    "Visualization"
+  ],
+  "activationEvents": [
+    "onCommand:csv-viewer.openViewer",
+    "onLanguage:csv"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "csv-viewer.openViewer",
+        "title": "Open CSV Viewer"
+      }
+    ],
+    "languages": [
+      {
+        "id": "csv",
+        "extensions": [
+          ".csv"
+        ],
+        "aliases": [
+          "CSV"
+        ]
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "resourceLangId == csv",
+          "command": "csv-viewer.openViewer",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "when": "resourceExtname == .csv",
+          "command": "csv-viewer.openViewer",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^8.2.3",
+    "@types/node": "^15.14.9",
+    "@types/vscode": "^1.99.1",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
+    "glob": "^7.2.3",
+    "mocha": "^9.2.2",
+    "ts-loader": "^9.5.2",
+    "typescript": "^4.9.5",
+    "vscode-test": "^1.6.1",
+    "webpack": "^5.99.5",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "csv-parse": "^5.6.0",
+    "sql.js": "^1.13.0"
+  }
+}
